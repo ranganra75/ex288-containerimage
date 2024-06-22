@@ -16,7 +16,7 @@ LABEL io.k8s.description="A basic Apache HTTP Server child image, uses ONBUILD" 
 
 RUN yum install -y --nodocs --disableplugin=subscription-manager httpd  &&  \
 yum clean all --disableplugin=subscription-manager -y  && \
-echo "Welcome to Openshift from the Parent Container" > ${DOCROOT}/index.html
+echo "Welcome to Openshift from the httpd-Parent Container" > ${DOCROOT}/index.html
 ONBUILD COPY src/ ${DOCROOT}/
 
 # Allows child images to inject their own content into DocumentRoot
