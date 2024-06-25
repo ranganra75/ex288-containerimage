@@ -18,7 +18,6 @@ RUN yum install -y --nodocs --disableplugin=subscription-manager httpd  &&  \
 yum clean all --disableplugin=subscription-manager -y  && \
 echo "Welcome to Openshift from the httpd-Parent Container" > ${DOCROOT}/index.html
 ONBUILD COPY src/ ${DOCROOT}/
-
 # Allows child images to inject their own content into DocumentRoot
 EXPOSE 8080
 
